@@ -20,9 +20,9 @@ import { update, get } from '@microsoft/sp-lodash-subset';
 import { PropertyPaneAsyncDropdown } from '../../common/controls/PropertyPaneAsyncDropdown/PropertyPaneAsyncDropdown';
 import { ControlMode } from '../../common/datatypes/ControlMode';
 import { Web } from 'sp-pnp-js/lib/pnp';
-import ConfigureWebPart from '../../common/components/ConfigureWebPart';
 import { IFieldConfiguration } from '../../../lib/webparts/lookup/components/IFieldConfiguration';
 import { PropertyPaneCheckboxList } from '../../common/controls/PropertyPaneCheckboxList/PropertyPaneCheckboxList';
+import ConfigureWebPart from '../../common/components/ConfigureWebpart/ConfigureWebPart';
 
 
 export interface ILookupWebPartProps {
@@ -89,16 +89,10 @@ export default class LookupWebPart extends BaseClientSideWebPart<
         Lookup,
         {
           context: this.context,
-          // inDesignMode: this.displayMode === DisplayMode.Edit,
-          // spHttpClient: this.context.spHttpClient,
           title: this.properties.title,
           description: this.properties.description,
-          // webUrl: this.context.pageContext.web.absoluteUrl,
           listUrl: this.properties.listUrl,
-          // formType: this.properties.formType,
-          // id: itemId,
           fields: this.properties.fields,
-          // showUnsupportedFields: this.properties.showUnsupportedFields,
           onSubmitSucceeded: (id: number) => this.formSubmitted(id),
           onUpdateFields: (fields: IFieldConfiguration[]) => this.updateField(fields),
         }

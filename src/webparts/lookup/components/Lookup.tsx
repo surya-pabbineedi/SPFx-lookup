@@ -31,11 +31,10 @@ export default class Lookup extends React.Component<ILookupProps, {}> {
   }
 
   private onError = error => {
-    console.log(error.data.responseBody['odata.error'].message);
     this.setState({
       error: error.data.responseBody['odata.error'].message.value
     });
-  };
+  }
 
   public _renderError() {
     return (
