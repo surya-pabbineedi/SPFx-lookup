@@ -70,7 +70,9 @@ export default class Lookup extends React.Component<ILookupProps, {}> {
           <div className={styles.container}>
             <div className={styles.row}>
               {this._renderError()}
-              <h1>{this.props.listUrl}</h1>
+              <label>{this.props.listUrl}</label>
+              <label>{this.props.title}</label>
+              <label>{this.props.description}</label>
             </div>
           </div>
         </div>
@@ -95,7 +97,7 @@ export default class Lookup extends React.Component<ILookupProps, {}> {
               <div>
                 <KaizenList
                   ref={node => (this.kaizenList = node)}
-                  listName={this.props.listName}
+                  listName={this.props.listUrl}
                   context={this.props.context}
                   onError={this.onError}
                   onEdit={this.onEdit}

@@ -231,8 +231,8 @@ export default class LookupWebPart extends BaseClientSideWebPart<
         try {
             return this.listService.getFields(this.properties.listUrl)
               .then( (data: any[]) => {
-                const selectableFields = data.map((f: any) => { return { key: f.InternalName, fieldName: f.Title } });
-                resolve( selectableFields );
+                const fields = data.map((f: any) => { return { key: f.InternalName, fieldName: f.Title }; });
+                resolve( fields );
               } );
          
         } catch (error) {

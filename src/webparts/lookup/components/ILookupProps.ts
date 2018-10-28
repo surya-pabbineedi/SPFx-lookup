@@ -1,7 +1,10 @@
 import { WebPartContext } from '@microsoft/sp-webpart-base';
+import { IFieldConfiguration } from '../../../../lib/webparts/lookup/components/IFieldConfiguration';
 
 export interface ILookupProps {
-  listName: string;
   listUrl: string;
+  title: string;
+  fields?: Array<IFieldConfiguration>;
+  description: string;
   context: WebPartContext;
 }
